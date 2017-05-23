@@ -11,13 +11,13 @@ public class Random{
 		int y;
 
 		try{
-		System.out.println("¶¬‚·‚éW’c”‚ğ“ü—ÍB");
+		System.out.println("ç”Ÿæˆã™ã‚‹é›†å›£æ•°ã‚’å…¥åŠ›ã€‚");
 		InputStreamReader isr=new InputStreamReader(System.in);
 		BufferedReader br=new BufferedReader(isr);
 		String buf=br.readLine();
 		x=Integer.parseInt(buf);
 
-		System.out.println("ŒÂ‘Ì‚Ì’·‚³‚ğ“ü—ÍB");
+		System.out.println("Â‘Ì‚å€‹ä½“ã®é•·ã•ã‚’å…¥åŠ›ã€‚");
 		InputStreamReader isr2=new InputStreamReader(System.in);
 		BufferedReader br2=new BufferedReader(isr2);
 		String buf2=br2.readLine();
