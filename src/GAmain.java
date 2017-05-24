@@ -1,5 +1,7 @@
 public class GAmain{
 	public static void main(String[] args){
-		Random.Ranview();
+		int[] Pop2=Random.Ranview();
+		double[] Pop3=Fitness.Compatible(Pop2);
+		
 	}
 }

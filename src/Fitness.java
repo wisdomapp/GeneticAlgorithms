@@ -1,6 +1,6 @@
 public class Fitness{
 
-	public static void conversion(int x,int y,String Pop[]){
+	public static int[] conversion(int x,int y,String Pop[]){
 		
 		int[] Pop2=new int[x];
 		
@@ -18,7 +18,21 @@ public class Fitness{
 			Pop2[i]=tmp;
 			System.out.println("Pop2["+i+"]="+Pop2[i]);
 		}
-		
+		return Pop2;
+	}
+	
+	public static double[] Compatible(int[] Pop2){
+		double Pop3[]=new double[Pop2.length];
+		for(int i=0;i<Pop2.length;i++){
+			double multi=1.0;
+			for(int i2=0;i2<Pop2.length;i2++){
+				multi += multi;
+			}
+			double tmp=Pop2[i]/multi;
+			Pop3[i]=-4*tmp*(tmp-1);//適合度関数
+			System.out.println("Pop2["+i+"]の適合度は"+Pop3[i]);
+		}
+		return Pop3;
 	}
 	
 }
