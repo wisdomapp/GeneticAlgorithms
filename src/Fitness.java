@@ -2,6 +2,8 @@ public class Fitness{
 
 	public static void conversion(int x,int y,String Pop[]){
 		
+		int[] Pop2=new int[x];
+		
 		for(int i=0;i<x;i++){
 			int tmp=0;
 			int multi=1;
@@ -12,7 +14,9 @@ public class Fitness{
 				multi += multi;
 				
 			}
-			System.out.println(tmp);
+			
+			Pop2[i]=tmp;
+			System.out.println("Pop["+i+"]="+Pop2[i]);
 		}
 		
 	}
