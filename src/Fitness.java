@@ -16,7 +16,7 @@ public class Fitness{
 			}
 			
 			Pop2[i]=tmp;
-			System.out.println("Pop["+i+"]="+Pop2[i]);
+			System.out.println("Pop2["+i+"]="+Pop2[i]);
 		}
 		
 	}
