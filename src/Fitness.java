@@ -16,7 +16,7 @@ public class Fitness{
 			}
 			
 			Pop2[i]=tmp;
-			System.out.println("Pop2["+i+"]="+Pop2[i]);
+			//System.out.println("Pop2["+i+"]="+Pop2[i]);
 		}
 		
 		return Pop2;
@@ -31,9 +31,8 @@ public class Fitness{
 			}
 			double tmp=Pop2[i]/multi;
 			Pop3[i]=-4*tmp*(tmp-1);//適合度関数
-			System.out.println("Pop2["+i+"]の適合度は"+Pop3[i]);
+			//System.out.println("Pop2["+i+"]の適合度は"+Pop3[i]);
 		}
-		//Roulette.Pselect(Pop3);
 		return Pop3;
 	}
 	
