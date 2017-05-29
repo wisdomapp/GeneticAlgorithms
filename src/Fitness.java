@@ -1,10 +1,10 @@
 public class Fitness{
 
-	public static int[] conversion(int x,int y,String Pop[]){
+	public static int[] conversion(String Pop[]){
 		
-		int[] Pop2=new int[x];
+		int[] Pop2=new int[Pop.length];
 		
-		for(int i=0;i<x;i++){
+		for(int i=0;i<Pop.length;i++){
 			int tmp=0;
 			int multi=1;
 			for(int i2=0;i2<Pop[0].length();i2++){
@@ -18,6 +18,7 @@ public class Fitness{
 			Pop2[i]=tmp;
 			System.out.println("Pop2["+i+"]="+Pop2[i]);
 		}
+		Fitness.Compatible(Pop2);
 		return Pop2;
 	}
 	
@@ -32,6 +33,7 @@ public class Fitness{
 			Pop3[i]=-4*tmp*(tmp-1);//適合度関数
 			System.out.println("Pop2["+i+"]の適合度は"+Pop3[i]);
 		}
+		Roulette.Pselect(Pop3);
 		return Pop3;
 	}
 	

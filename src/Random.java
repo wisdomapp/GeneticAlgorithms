@@ -3,10 +3,7 @@ import java.io.InputStreamReader;
 
 
 public class Random{
-	public static int[] Ranview(){
-
-
-
+	public static String[] Ranview(){
 		int x;
 		int y;
 
@@ -40,9 +37,14 @@ public class Random{
 		for(int i=0;i<x;i++){
 			System.out.println("Pop["+i+"]="+Pop[i]);
 			}
-		int[] Pop2=new int[x];
-		Pop2=Fitness.conversion(x,y,Pop);
-		return Pop2;
-	  }
-
+		RanView2(Pop);
+		return Pop;
 	}
+	public static int [] RanView2(String[] Pop){
+		int[] Pop2=new int[Pop.length];
+		Pop2=Fitness.conversion(Pop);
+		return Pop2;
+	}
+}
+
+	
