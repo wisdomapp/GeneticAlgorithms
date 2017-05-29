@@ -19,7 +19,7 @@ public class Roulette{
 		for(int i=0;i<PopS.length;i++){
 			double multi=0.0;
 			double tmp=Math.random();
-			System.out.println(tmp);
+			System.out.println((i+1)+"回目のルーレットは"+tmp);
 			for(int i2=0;i2<PopS.length;i2++){
 				multi += PopS[i2];
 				if(multi>tmp){
@@ -28,7 +28,7 @@ public class Roulette{
 				}
 
 			}
-			System.out.println(sle);
+			System.out.println("選択されたのはPop["+sle+"]");
 		}
 	}
 	
