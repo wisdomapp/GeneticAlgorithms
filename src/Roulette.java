@@ -1,5 +1,5 @@
 public class Roulette{
-	public static void Pselect(double[] Pop3){
+	public static double[] Pselect(double[] Pop3){
 		double[] PopS=new double[Pop3.length];
 		double tmp=0.0;
 		for(int i=0;i<Pop3.length;i++){
@@ -10,11 +10,12 @@ public class Roulette{
 			System.out.println("Pop2["+i+"]の確率分布は"+PopS[i]);
 		}
 		
-		Select(PopS);
+		
+		return PopS;
 	}
 	
-	public static void Select(double[] PopS){
-
+	public static int[] Select(double[] PopS){
+		int[] select=new int[PopS.length];
 		int sle=0;
 		for(int i=0;i<PopS.length;i++){
 			double multi=0.0;
@@ -29,8 +30,22 @@ public class Roulette{
 
 			}
 			System.out.println("選択されたのはPop["+sle+"]");
+			select[i]=sle;
 		}
+		return select;
 	}
+	
+	public static String[] GenerationalChange(String[] Pop,int[] Select){
+		String[] NewPop=new String[Pop.length];
+		for(int i=0;i<Pop.length;i++){
+			NewPop[i]=Pop[Select[i]];
+			System.out.println("NewPop["+i+"]="+NewPop[i]);
+		}
+		
+		return NewPop;
+	}
+	
+	
 	
 	
 }

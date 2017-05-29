@@ -18,7 +18,7 @@ public class Fitness{
 			Pop2[i]=tmp;
 			System.out.println("Pop2["+i+"]="+Pop2[i]);
 		}
-		Fitness.Compatible(Pop2);
+		
 		return Pop2;
 	}
 	
@@ -33,7 +33,7 @@ public class Fitness{
 			Pop3[i]=-4*tmp*(tmp-1);//適合度関数
 			System.out.println("Pop2["+i+"]の適合度は"+Pop3[i]);
 		}
-		Roulette.Pselect(Pop3);
+		//Roulette.Pselect(Pop3);
 		return Pop3;
 	}
 	

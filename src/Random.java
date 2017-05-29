@@ -37,14 +37,10 @@ public class Random{
 		for(int i=0;i<x;i++){
 			System.out.println("Pop["+i+"]="+Pop[i]);
 			}
-		RanView2(Pop);
+		Fitness.conversion(Pop);
 		return Pop;
 	}
-	public static int [] RanView2(String[] Pop){
-		int[] Pop2=new int[Pop.length];
-		Pop2=Fitness.conversion(Pop);
-		return Pop2;
-	}
+
 }
 
 	
