@@ -37,7 +37,7 @@ public class Random{
 		for(int i=0;i<x;i++){
 			System.out.println("Pop["+i+"]="+Pop[i]);
 			}
-		Fitness.conversion(Pop);
+		//Fitness.conversion(Pop);
 		return Pop;
 	}
 
