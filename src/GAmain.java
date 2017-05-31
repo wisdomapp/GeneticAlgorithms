@@ -7,6 +7,8 @@ public class GAmain{
 		double[] PopS=Roulette.Pselect(Pop3); //確率分布計算
 		int[] Select=Roulette.Select(PopS); //集団選択
 		String[] NewPop=Roulette.GenerationalChange(Pop, Select); //世代交代
+		Crossover.Cross(NewPop);
+		
 
 		
 	}
