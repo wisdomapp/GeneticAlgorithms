@@ -1,5 +1,6 @@
 public class GAmain{
 	public static void main(String[] args){
+		
 		String Pop[]=Random.Ranview(); //初期集団
 		int Pop2[]=Fitness.conversion(Pop); //10進数変換
 		double[] Pop3=Fitness.Compatible(Pop2); //適合度計算
