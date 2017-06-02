@@ -16,14 +16,14 @@ public class Crossover{
 			if(lst.contains(i))i++;
 			if(NewPop.length%2==0){
 				if(lst.size()==NewPop.length){
-					System.out.println("break");
+					//System.out.println("交叉終了");
 					break;
 				}
 				lst.add(i);
 			}else{
 				lst.add(i);
 				if(lst.size()==NewPop.length){
-					System.out.println("break");
+					//System.out.println("交叉終了");
 					break;
 				}
 				
@@ -34,7 +34,7 @@ public class Crossover{
 				int m=(int) (Math.random()*NewPop[i].length()); //何文字目で区切るか
 				while(lst.contains(y)){
 					 y=(int) (Math.random()*NewPop.length);
-					 System.out.println("roop");
+					 //System.out.println("roop");
 				}
 				System.out.println("NewPoP["+i+"]はNewPop["+y+"]と"+(m+1)+"文字目で交叉");
 				String tmp1=tmp[i].substring(0,m);
@@ -46,7 +46,11 @@ public class Crossover{
 				lst.add(y);
 				
 			}
-			System.out.println(tmp[i]);
+			//System.out.println(tmp[i]);
+		}
+		System.out.println("交叉終了");
+		for(int i3=0;i3<NewPop.length;i3++){
+			System.out.println("NewPop["+i3+"]="+tmp[i3]);
 		}
 	}
 }
