@@ -13,7 +13,7 @@ public class Crossover{
 		
 		for(int i=0;i<NewPop.length;i++){
 			
-			
+			if(lst.contains(i))i++;
 			if(NewPop.length%2==0){
 				if(lst.size()==NewPop.length){
 					System.out.println("break");
@@ -43,7 +43,6 @@ public class Crossover{
 				String tmp4=tmp[y].substring(m);
 				tmp[i]=tmp1+tmp4;
 				tmp[y]=tmp3+tmp2;
-				//lst.add(i);
 				lst.add(y);
 				
 			}
