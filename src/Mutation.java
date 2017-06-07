@@ -3,6 +3,7 @@ public class Mutation{
 	public static String[] Mut (String[] NewPop2){
 		
 		StringBuilder[] tmp = new StringBuilder[NewPop2.length];
+		String[] NewPop3=new String[NewPop2.length];
 		for(int i=0;i<NewPop2.length;i++){
 			tmp[i]=new StringBuilder("");
 			//System.out.println("test");
@@ -28,9 +29,14 @@ public class Mutation{
 		
 		System.out.println("突然変異終了");
 		for(int i3=0;i3<NewPop2.length;i3++){
-			System.out.println("NewPop["+i3+"]="+tmp[i3]);
+			NewPop3[i3]=new String(tmp[i3]);
+			System.out.println("NewPop["+i3+"]="+NewPop3[i3]);
+			
 		}
-		return NewPop2;
+		
+		
+		
+		return NewPop3;
 	}
 	
 }
