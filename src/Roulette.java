@@ -36,12 +36,13 @@ public class Roulette{
 	}
 	
 	public static String[] GenerationalChange(String[] Pop,int[] Select){
+		
 		String[] NewPop=new String[Pop.length];
 		for(int i=0;i<Pop.length;i++){
 			NewPop[i]=Pop[Select[i]];
 			System.out.println("NewPop["+i+"]="+NewPop[i]);
 		}
-		
+		System.out.println("選択終了");
 		return NewPop;
 	}
 	

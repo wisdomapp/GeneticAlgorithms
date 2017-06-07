@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Crossover{
 	
-	public static void Cross(String[] NewPop){
+	public static String[] Cross(String[] NewPop){
 		double probability=1.0; //交叉確率
 		ArrayList<Integer> lst = new ArrayList<>();
 		String[] tmp=new String[NewPop.length];
@@ -16,14 +16,12 @@ public class Crossover{
 			if(lst.contains(i))i++;
 			if(NewPop.length%2==0){
 				if(lst.size()==NewPop.length){
-					//System.out.println("交叉終了");
 					break;
 				}
 				lst.add(i);
 			}else{
 				lst.add(i);
-				if(lst.size()==NewPop.length){
-					//System.out.println("交叉終了");
+				if(lst.size()==NewPop.length){;
 					break;
 				}
 				
@@ -52,5 +50,7 @@ public class Crossover{
 		for(int i3=0;i3<NewPop.length;i3++){
 			System.out.println("NewPop["+i3+"]="+tmp[i3]);
 		}
+		
+		return tmp;
 	}
 }
