@@ -47,11 +47,11 @@ public class Crossover{
 			}
 			//System.out.println(tmp[i]);
 		}
-		System.out.println("交叉終了");
+		
 		for(int i3=0;i3<NewPop.length;i3++){
 			System.out.println("NewPop["+i3+"]="+tmp[i3]);
 		}
-		
+		System.out.println("交叉終了");
 		return tmp;
 	}
 }

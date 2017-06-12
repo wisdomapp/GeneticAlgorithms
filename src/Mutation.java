@@ -27,13 +27,13 @@ public class Mutation{
 			
 		}
 		
-		System.out.println("突然変異終了");
+		
 		for(int i3=0;i3<NewPop2.length;i3++){
 			NewPop3[i3]=new String(tmp[i3]);
 			System.out.println("NewPop3["+i3+"]="+NewPop3[i3]);
 			
 		}
-		
+		System.out.println("突然変異終了");
 		
 		
 		return NewPop3;
