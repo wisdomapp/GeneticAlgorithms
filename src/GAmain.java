@@ -27,6 +27,8 @@ public class GAmain{
 			String[] NewPop2=Crossover.Cross(NewPop); //一点交叉
 			String[] NewPop3=Mutation.Mut(NewPop2); //突然変異
 			System.out.println("第"+(i+1)+"世代終了");
+			if(x==i+1)break;
+			System.out.println("第"+(i+2)+"世代開始");
 			Pop2=Fitness.conversion(NewPop3); //10進数変換
 			
 		}

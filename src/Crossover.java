@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Crossover{
 	
 	public static String[] Cross(String[] NewPop){
+		System.out.println("交叉開始");
 		double probability=1.0; //交叉確率
 		ArrayList<Integer> lst = new ArrayList<>();
 		String[] tmp=new String[NewPop.length];

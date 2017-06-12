@@ -1,7 +1,7 @@
 public class Mutation{
 	
 	public static String[] Mut (String[] NewPop2){
-		
+		System.out.println("突然変異開始");
 		StringBuilder[] tmp = new StringBuilder[NewPop2.length];
 		String[] NewPop3=new String[NewPop2.length];
 		for(int i=0;i<NewPop2.length;i++){

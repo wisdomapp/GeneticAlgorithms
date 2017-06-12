@@ -4,6 +4,7 @@ import java.io.InputStreamReader;
 
 public class Random{
 	public static String[] Ranview(){
+		
 		int x;
 		int y;
 
@@ -26,7 +27,7 @@ public class Random{
 		}
 
 		String[] Pop=new String[x];
-
+		System.out.println("第1世代開始\n初期集団");
 		for(int i=0;i<x;i++){
 			Pop[i]="";
 			for(int i2=0;i2<y;i2++){
