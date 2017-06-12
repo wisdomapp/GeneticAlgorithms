@@ -26,7 +26,7 @@ public class GAmain{
 			
 			data[i].Pop3=Fitness.Compatible(data[i].Pop2); //適合度計算
 			data[i].Elite=Roulette.Elite(data[i].Pop3);//エリート戦略
-			System.out.println("エリート番号は"+data[i].Elite);
+			//System.out.println("エリート番号は"+data[i].Elite);
 			data[i].PopS=Roulette.Pselect(data[i].Pop3); //確率分布計算
 			data[i].Select=Roulette.Select(data[i].PopS); //集団選択
 			data[i].NewPop=Roulette.GenerationalChange(data[i].Pop, data[i].Select); //世代交代
