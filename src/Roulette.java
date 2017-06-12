@@ -9,11 +9,15 @@ public class Roulette{
 			PopS[i]=Pop3[i]/tmp;
 			//System.out.println("Pop2["+i+"]の確率分布は"+PopS[i]);
 		}
-		
-		
+
+
 		return PopS;
 	}
-	
+
+	public static void Elite(){
+
+	}
+
 	public static int[] Select(double[] PopS){
 		int[] select=new int[PopS.length];
 		int sle=0;
@@ -34,9 +38,9 @@ public class Roulette{
 		}
 		return select;
 	}
-	
+
 	public static String[] GenerationalChange(String[] Pop,int[] Select){
-		
+
 		String[] NewPop=new String[Pop.length];
 		System.out.println("選択開始");
 		for(int i=0;i<Pop.length;i++){
@@ -46,8 +50,8 @@ public class Roulette{
 		System.out.println("選択終了");
 		return NewPop;
 	}
-	
-	
-	
-	
+
+
+
+
 }
