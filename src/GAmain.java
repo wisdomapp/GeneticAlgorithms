@@ -27,6 +27,7 @@ public class GAmain{
 			data[i].Pop3=Fitness.Compatible(data[i].Pop2); //適合度計算
 			data[i].PopS=Roulette.Pselect(data[i].Pop3); //確率分布計算
 			data[i].Select=Roulette.Select(data[i].PopS); //集団選択
+			System.out.println("Popは"+data[i].Pop[i]);
 			data[i].NewPop=Roulette.GenerationalChange(data[i].Pop, data[i].Select); //世代交代
 			data[i].NewPop2=Crossover.Cross(data[i].NewPop); //一点交叉
 			data[i].NewPop3=Mutation.Mut(data[i].NewPop2); //突然変異

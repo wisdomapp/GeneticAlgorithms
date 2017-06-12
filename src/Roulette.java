@@ -7,7 +7,7 @@ public class Roulette{
 		}
 		for(int i=0;i<Pop3.length;i++){
 			PopS[i]=Pop3[i]/tmp;
-			//System.out.println("Pop2["+i+"]の確率分布は"+PopS[i]);
+			System.out.println("Pop2["+i+"]の確率分布は"+PopS[i]);
 		}
 
 
@@ -24,7 +24,7 @@ public class Roulette{
 		for(int i=0;i<PopS.length;i++){
 			double multi=0.0;
 			double tmp=Math.random();
-			//System.out.println((i+1)+"回目のルーレットは"+tmp);
+			System.out.println((i+1)+"回目のルーレットは"+tmp);
 			for(int i2=0;i2<PopS.length;i2++){
 				multi += PopS[i2];
 				if(multi>tmp){
@@ -33,7 +33,7 @@ public class Roulette{
 				}
 
 			}
-			//System.out.println("選択されたのはPop["+sle+"]");
+			System.out.println("選択されたのはPop["+sle+"]");
 			select[i]=sle;
 		}
 		return select;
@@ -45,7 +45,7 @@ public class Roulette{
 		System.out.println("選択開始");
 		for(int i=0;i<Pop.length;i++){
 			NewPop[i]=Pop[Select[i]];
-			System.out.println("NewPop["+i+"]="+NewPop[i]);
+			System.out.println("PoP[i]は"+Pop[i]+"\nNewPop["+i+"]="+NewPop[i]);
 		}
 		System.out.println("選択終了");
 		return NewPop;
