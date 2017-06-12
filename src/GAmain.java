@@ -34,6 +34,7 @@ public class GAmain{
 			System.out.println("第"+(i+1)+"世代終了");
 			if(x==i+1)break;
 			System.out.println("第"+(i+2)+"世代開始");
+			data[i+1].Pop=data[i].NewPop3;
 			data[i+1].Pop2=Fitness.conversion(data[i].NewPop3); //10進数変換
 			
 		}
