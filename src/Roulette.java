@@ -14,8 +14,21 @@ public class Roulette{
 		return PopS;
 	}
 
-	public static void Elite(){
+	public static int Elite(double[] Pop3){
+		double values[]=Pop3;
+		double max=values[0];
+		int ele=0;
 
+		for(int index=1;index<values.length;index++){
+			max=Math.max(max,values[index]);
+		}
+		for(int index=0;index<values.length;index++){
+			if(values[index]==max){
+				ele=index;
+				break;
+			}
+		}
+		return ele;
 	}
 
 	public static int[] Select(double[] PopS){
