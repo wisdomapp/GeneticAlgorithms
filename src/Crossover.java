@@ -45,7 +45,7 @@ public class Crossover{
 				lst.add(y);
 				
 			}
-			System.out.println(tmp[i]);
+			//System.out.println(tmp[i]);
 		}
 		
 		for(int i3=0;i3<NewPop.length;i3++){
