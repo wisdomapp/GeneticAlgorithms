@@ -29,7 +29,8 @@ public class GAmain{
 			System.out.println("第"+(i+1)+"世代終了");
 			if(x==i+1)break;
 			System.out.println("第"+(i+2)+"世代開始");
-			Pop2=Fitness.conversion(NewPop3); //10進数変換
+			Pop=NewPop3;
+			Pop2=Fitness.conversion(Pop); //10進数変換
 			
 		}
 		
