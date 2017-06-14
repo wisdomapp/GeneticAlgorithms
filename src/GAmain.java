@@ -1,11 +1,13 @@
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class GAmain{
-	public static void main(String[] args){
+	public static void main(String[] args) throws IOException{
 		
 		int x;
 		int y;
+		int z;
 		try{
 			System.out.println("生成する世代数を入力。");
 			InputStreamReader isr=new InputStreamReader(System.in);
@@ -18,10 +20,13 @@ public class GAmain{
 			BufferedReader br2=new BufferedReader(isr2);
 			String buf2=br2.readLine();
 			y=Integer.parseInt(buf2);
+			
+			
 
 			}catch(Exception e){
 				x=0;
 				y=0;
+				z=0;
 			}
 		Data[] data=new Data[x]; //データ構造体配列
 		for(int i=0;i<data.length;i++){
@@ -52,5 +57,12 @@ public class GAmain{
 			
 		}
 		
+		System.out.println("ファイル保存するなら0,しないなら1を入力");
+		InputStreamReader isr3=new InputStreamReader(System.in);
+		BufferedReader br3=new BufferedReader(isr3);
+		String buf3=br3.readLine();
+		z=Integer.parseInt(buf3);
+		if(z==0)Output.File(data);
+		System.out.println("終了");
 	}
 }

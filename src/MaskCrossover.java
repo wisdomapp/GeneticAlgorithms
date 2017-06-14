@@ -2,17 +2,6 @@ import java.util.ArrayList;
 
 public class MaskCrossover{
 
-	/*public static String[] Mask(){
-		String[] Pop=new String[x];
-		System.out.println("第1世代開始\n初期集団");
-		for(int i=0;i<x;i++){
-			Pop[i]="";
-			for(int i2=0;i2<y;i2++){
-				Pop[i] +=(int)(Math.random()+0.5);
-			}
-		}
-		return null;
-	}*/
 
 	public static String[] Cross(String[] NewPop){
 		StringBuilder[] tmp2 = new StringBuilder[NewPop.length];
