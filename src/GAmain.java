@@ -8,26 +8,19 @@ public class GAmain{
 		int x;
 		int y;
 		int z;
-		try{
-			System.out.println("生成する世代数を入力。");
-			InputStreamReader isr=new InputStreamReader(System.in);
-			BufferedReader br=new BufferedReader(isr);
-			String buf=br.readLine();
-			x=Integer.parseInt(buf);
+		
+		System.out.println("生成する世代数を入力。");
+		InputStreamReader isr=new InputStreamReader(System.in);
+		BufferedReader br=new BufferedReader(isr);
+		String buf=br.readLine();
+		x=Integer.parseInt(buf);
 			
-			System.out.println("̂一点交叉なら0、一様交叉なら1を入力。");
-			InputStreamReader isr2=new InputStreamReader(System.in);
-			BufferedReader br2=new BufferedReader(isr2);
-			String buf2=br2.readLine();
-			y=Integer.parseInt(buf2);
-			
-			
+		System.out.println("̂一点交叉なら0、一様交叉なら1を入力。");
+		InputStreamReader isr2=new InputStreamReader(System.in);
+		BufferedReader br2=new BufferedReader(isr2);
+		String buf2=br2.readLine();
+		y=Integer.parseInt(buf2);
 
-			}catch(Exception e){
-				x=0;
-				y=0;
-				z=0;
-			}
 		Data[] data=new Data[x]; //データ構造体配列
 		for(int i=0;i<data.length;i++){
 			data[i]=new Data(x);
