@@ -30,7 +30,7 @@ public class GAmain{
 			data[i].PopS=Roulette.Pselect(data[i].Pop3); //確率分布計算
 			data[i].Select=Roulette.Select(data[i].PopS); //集団選択
 			data[i].NewPop=Roulette.GenerationalChange(data[i].Pop, data[i].Select); //世代交代
-			data[i].NewPop2=Crossover.Cross(data[i].NewPop); //一点交叉
+			data[i].NewPop2=MaskCrossover.Cross(data[i].NewPop); //一点交叉
 			data[i].NewPop3=Mutation.Mut(data[i].NewPop2); //突然変異
 			System.out.println("第"+(i+1)+"世代終了");
 			if(x==i+1)break;
