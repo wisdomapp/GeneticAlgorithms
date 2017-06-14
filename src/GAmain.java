@@ -5,15 +5,23 @@ public class GAmain{
 	public static void main(String[] args){
 		
 		int x;
+		int y;
 		try{
 			System.out.println("生成する世代数を入力。");
 			InputStreamReader isr=new InputStreamReader(System.in);
 			BufferedReader br=new BufferedReader(isr);
 			String buf=br.readLine();
 			x=Integer.parseInt(buf);
+			
+			System.out.println("̂一点交叉なら0、一様交叉なら1を入力。");
+			InputStreamReader isr2=new InputStreamReader(System.in);
+			BufferedReader br2=new BufferedReader(isr2);
+			String buf2=br2.readLine();
+			y=Integer.parseInt(buf2);
 
 			}catch(Exception e){
 				x=0;
+				y=0;
 			}
 		Data[] data=new Data[x]; //データ構造体配列
 		for(int i=0;i<data.length;i++){
@@ -30,7 +38,11 @@ public class GAmain{
 			data[i].PopS=Roulette.Pselect(data[i].Pop3); //確率分布計算
 			data[i].Select=Roulette.Select(data[i].PopS); //集団選択
 			data[i].NewPop=Roulette.GenerationalChange(data[i].Pop, data[i].Select); //世代交代
-			data[i].NewPop2=MaskCrossover.Cross(data[i].NewPop); //一点交叉
+			if(y==0){
+				data[i].NewPop2=Crossover.Cross(data[i].NewPop); //一点交叉
+			}else{
+				data[i].NewPop2=MaskCrossover.Cross(data[i].NewPop); //一様交叉
+			}
 			data[i].NewPop3=Mutation.Mut(data[i].NewPop2); //突然変異
 			System.out.println("第"+(i+1)+"世代終了");
 			if(x==i+1)break;
