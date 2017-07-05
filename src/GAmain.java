@@ -43,16 +43,35 @@ public class GAmain{
 			}
 			data[i].NewPop3=Mutation.Mut(data[i].NewPop2); //突然変異
 			int tmp[]=Fitness.conversion(data[i].NewPop3);
-			/*double tmp2[]=Fitness.Compatible(tmp );
+			double tmp2[]=Fitness.Compatible(tmp,data[i].Pop);
+			
+			System.out.println("えりーとは"+data[i].Pop3[data[i].Elite]);
 			for(int i2=0;data[i].Pop.length>i2;i2++){
 				//int t=data[i].Pop.length;
-				System.out.println(data[i].Pop3[data[i].Elite]);
 				
-				if(tmp2[i2]>data[i].Pop3[data[i].Elite])break;
-				if(i2==data[i].Pop.length){
-					System.out.println("エリートといれかえ");
+				
+				if(tmp2[i2]>data[i].Pop3[data[i].Elite]){
+					System.out.println("えりーとよりいいのある");
+					break;
 				}
-			}*/
+				if(i2+1>=data[i].Pop.length){
+					System.out.println("エリートといれかえ");
+					double values[]=tmp2;
+					double max=values[0];
+					int min;
+					for(int index=1;index<values.length;index++){
+						max=Math.min(max,values[index]);
+					}
+					for(int index=0;index<values.length;index++){
+						if(values[index]==max){
+							min=index;
+							System.out.println("いちばんざこは"+min);
+							break;
+						}
+					}
+					
+				}
+			}
 			System.out.println("第"+(i+1)+"世代終了");
 			if(x==i+1)break;
 			System.out.println("第"+(i+2)+"世代開始");

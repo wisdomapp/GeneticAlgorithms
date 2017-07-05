@@ -20,7 +20,7 @@ public class Fitness{
 		}*/
 		for(int i=0;i<Pop.length;i++){
 		Pop2[i]=Integer.parseInt(Pop[i],2);
-		System.out.println(Pop2[i]);
+		//System.out.println(Pop2[i]);
 		}
 		
 		return Pop2;
