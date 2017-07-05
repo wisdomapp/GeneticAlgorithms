@@ -30,9 +30,9 @@ public class GAmain{
 		data[0].Pop2=Fitness.conversion(data[0].Pop); //10進数変換
 		for(int i=0;i<x;i++){
 			
-			data[i].Pop3=Fitness.Compatible(data[i].Pop2); //適合度計算
+			data[i].Pop3=Fitness.Compatible(data[i].Pop2,data[i].Pop); //適合度計算
 			data[i].Elite=Roulette.Elite(data[i].Pop3);//エリート戦略
-			//System.out.println("エリート番号は"+data[i].Elite);
+			System.out.println("エリート番号は"+data[i].Elite);
 			data[i].PopS=Roulette.Pselect(data[i].Pop3); //確率分布計算
 			data[i].Select=Roulette.Select(data[i].PopS); //集団選択
 			data[i].NewPop=Roulette.GenerationalChange(data[i].Pop, data[i].Select); //世代交代
@@ -42,6 +42,17 @@ public class GAmain{
 				data[i].NewPop2=MaskCrossover.Cross(data[i].NewPop); //一様交叉
 			}
 			data[i].NewPop3=Mutation.Mut(data[i].NewPop2); //突然変異
+			int tmp[]=Fitness.conversion(data[i].NewPop3);
+			/*double tmp2[]=Fitness.Compatible(tmp );
+			for(int i2=0;data[i].Pop.length>i2;i2++){
+				//int t=data[i].Pop.length;
+				System.out.println(data[i].Pop3[data[i].Elite]);
+				
+				if(tmp2[i2]>data[i].Pop3[data[i].Elite])break;
+				if(i2==data[i].Pop.length){
+					System.out.println("エリートといれかえ");
+				}
+			}*/
 			System.out.println("第"+(i+1)+"世代終了");
 			if(x==i+1)break;
 			System.out.println("第"+(i+2)+"世代開始");

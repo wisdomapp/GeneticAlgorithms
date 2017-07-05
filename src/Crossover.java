@@ -35,7 +35,7 @@ public class Crossover{
 					 y=(int) (Math.random()*NewPop.length);
 					 //System.out.println("roop");
 				}
-				System.out.println("NewPoP["+i+"]はNewPop["+y+"]と"+(m+1)+"文字目で交叉");
+				//System.out.println("NewPoP["+i+"]はNewPop["+y+"]と"+(m+1)+"文字目で交叉");
 				String tmp1=tmp[i].substring(0,m);
 				String tmp2=tmp[i].substring(m);
 				String tmp3=tmp[y].substring(0,m);

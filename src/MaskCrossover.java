@@ -45,8 +45,8 @@ public class MaskCrossover{
 					 y=(int) (Math.random()*NewPop.length);
 					 //System.out.println("roop");
 				}
-				System.out.println("NewPoP["+i+"]とNewPop["+y+"]が交叉");
-				System.out.println("マスクは"+Mask);
+				//System.out.println("NewPoP["+i+"]とNewPop["+y+"]が交叉");
+				//System.out.println("マスクは"+Mask);
 				char tmp3=' ';
 				for(int z=0;z<NewPop[0].length();z++){
 					if(Mask.charAt(z)=='0'){
