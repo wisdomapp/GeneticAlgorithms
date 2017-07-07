@@ -66,6 +66,9 @@ public class GAmain{
 						if(values[index]==max){
 							min=index;
 							System.out.println("いちばんざこは"+min);
+							System.out.println(data[i].NewPop3[min]+"をへんこう");
+							data[i].NewPop3[min]=data[i].Pop[data[i].Elite];
+							System.out.println(data[i].NewPop3[min]+"にへんこう");
 							break;
 						}
 					}
