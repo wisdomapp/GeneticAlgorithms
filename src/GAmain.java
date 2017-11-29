@@ -3,33 +3,41 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class GAmain{
+	static int gray=0;//グレイコードフラグ
 	public static void main(String[] args) throws IOException{
-		
+
 		int x;
 		int y;
 		int z;
-		
+
+
 		System.out.println("生成する世代数を入力。");
 		InputStreamReader isr=new InputStreamReader(System.in);
 		BufferedReader br=new BufferedReader(isr);
 		String buf=br.readLine();
 		x=Integer.parseInt(buf);
-			
+
 		System.out.println("̂一点交叉なら0、一様交叉なら1を入力。");
 		InputStreamReader isr2=new InputStreamReader(System.in);
 		BufferedReader br2=new BufferedReader(isr2);
 		String buf2=br2.readLine();
 		y=Integer.parseInt(buf2);
 
+		System.out.println("̂二進数なら0、グレイコードなら1を入力。");
+		InputStreamReader isr4=new InputStreamReader(System.in);
+		BufferedReader br4=new BufferedReader(isr4);
+		String buf4=br4.readLine();
+		gray=Integer.parseInt(buf4);
+
 		Data[] data=new Data[x]; //データ構造体配列
 		for(int i=0;i<data.length;i++){
 			data[i]=new Data(x);
 		}
-		
+
 		data[0].Pop=Random.Ranview(); //初期集団
 		data[0].Pop2=Fitness.conversion(data[0].Pop); //10進数変換
 		for(int i=0;i<x;i++){
-			
+
 			data[i].Pop3=Fitness.Compatible(data[i].Pop2,data[i].Pop); //適合度計算
 			data[i].Elite=Roulette.Elite(data[i].Pop3);//エリート戦略
 			System.out.println("エリート番号は"+data[i].Elite);
@@ -44,12 +52,12 @@ public class GAmain{
 			data[i].NewPop3=Mutation.Mut(data[i].NewPop2); //突然変異
 			int tmp[]=Fitness.conversion(data[i].NewPop3);
 			double tmp2[]=Fitness.Compatible(tmp,data[i].Pop);
-			
+
 			System.out.println("えりーとは"+data[i].Pop3[data[i].Elite]);
 			for(int i2=0;data[i].Pop.length>i2;i2++){
 				//int t=data[i].Pop.length;
-				
-				
+
+
 				if(tmp2[i2]>data[i].Pop3[data[i].Elite]){
 					System.out.println("えりーとよりいいのある");
 					break;
@@ -72,7 +80,7 @@ public class GAmain{
 							break;
 						}
 					}
-					
+
 				}
 			}
 			System.out.println("第"+(i+1)+"世代終了");
@@ -80,9 +88,9 @@ public class GAmain{
 			System.out.println("第"+(i+2)+"世代開始");
 			data[i+1].Pop=data[i].NewPop3;
 			data[i+1].Pop2=Fitness.conversion(data[i].NewPop3); //10進数変換
-			
+
 		}
-		
+
 		System.out.println("ファイル保存するなら0,しないなら1を入力");
 		InputStreamReader isr3=new InputStreamReader(System.in);
 		BufferedReader br3=new BufferedReader(isr3);
