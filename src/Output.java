@@ -19,9 +19,15 @@ public class Output{
 			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file)));
 
 		      for(int i=0;i<data.length;i++){
+		    	  if(GAmain.gray==0){
 		    		  for(int i2=0;i2<data[0].Pop.length;i2++){
 		    			  pw.println(data[i].Pop[i2]+" "+data[i].Pop3[i2]);
 		    		  }
+		    	  }else if(GAmain.gray==1){
+		    		  for(int i2=0;i2<data[0].Pop.length;i2++){
+		    			  pw.println(Fitness.Gray(data[i].Pop[i2])+" "+data[i].Pop3[i2]);
+		    		  }
+		    	  }
 		    	  pw.println("#");
 		      }
 		      pw.close();

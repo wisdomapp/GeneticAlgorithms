@@ -30,22 +30,7 @@ public class Fitness{
 		}else if(GAmain.gray==1){
 			//グレイコード変換
 			for(int i=0;i<Pop.length;i++){
-					for(int z=0;Pop[0].length()>z;z++){
-						if(z==0){
-							Tmp[i]+=String.valueOf(Pop[i].charAt(0));
-						}else{
-							char t0,t1;
-							int s0,s1;
-							t0=Pop[i].charAt(z);
-							t1=Tmp[i].charAt(z-1);
-							s0= Integer.parseInt(String.valueOf(t0));
-							s1=Integer.parseInt(String.valueOf(t1));
-							int h=s0^s1;
-							Tmp[i]+=String.valueOf(h);
-						}
-						
-					}
-				Pop2[i]=Integer.parseInt(Tmp[i],2);
+				Pop2[i]=Integer.parseInt(Gray(Pop[i]),2);
 				System.out.println("Pop["+i+"]二進数は"+Tmp[i]);
 				System.out.println(Pop2[i]);
 			}
@@ -69,6 +54,26 @@ public class Fitness{
 			System.out.println("Pop2["+i+"]の適合度は"+Pop3[i]);
 		}
 		return Pop3;
+	}
+	
+	public static String Gray(String Pop){
+		String Tmp="";
+		for(int z=0;Pop.length()>z;z++){
+			if(z==0){
+				Tmp+=String.valueOf(Pop.charAt(0));
+			}else{
+				char t0,t1;
+				int s0,s1;
+				t0=Pop.charAt(z);
+				t1=Tmp.charAt(z-1);
+				s0= Integer.parseInt(String.valueOf(t0));
+				s1=Integer.parseInt(String.valueOf(t1));
+				int h=s0^s1;
+				Tmp+=String.valueOf(h);
+			}
+			
+		}
+		return Tmp;
 	}
 	
 }
