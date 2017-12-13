@@ -4,11 +4,12 @@ import java.io.InputStreamReader;
 
 public class GAmain{
 	static int gray=0;//グレイコードフラグ
+	final int island=4;//島の数
 	public static void main(String[] args) throws IOException{
 
-		int x;
-		int y;
-		int z;
+		int x;//世代数
+		int y;//交叉フラグ
+		int z;//ファイル保存フラグ
 
 
 		System.out.println("生成する世代数を入力。");
