@@ -2,8 +2,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import parallelga.PGAmain;
+
 public class GAmain{
 	static int gray=0;//グレイコードフラグ
+	static int parallelGA=0;//並列分散フラグ
 	final int island=4;//島の数
 	public static void main(String[] args) throws IOException{
 
@@ -11,7 +14,14 @@ public class GAmain{
 		int y;//交叉フラグ
 		int z;//ファイル保存フラグ
 
-
+		System.out.println("̂シンプルGAなら0、並列分散GAなら1を入力。");
+		InputStreamReader isr5=new InputStreamReader(System.in);
+		BufferedReader br5=new BufferedReader(isr5);
+		String buf5=br5.readLine();
+		parallelGA=Integer.parseInt(buf5);
+		
+		if(parallelGA==1)PGAmain.PGA();
+		
 		System.out.println("生成する世代数を入力。");
 		InputStreamReader isr=new InputStreamReader(System.in);
 		BufferedReader br=new BufferedReader(isr);
