@@ -30,11 +30,15 @@ public class PGAmain{
 			data[0][i].Pop2=Fitness.conversion(data[0][i].Pop); 
 		}
 
+		for(int i=0;i<ISLAND;i++){//適合度計算
+			data[0][i].Pop3=Fitness.Compatible(data[0][i].Pop2,data[0][i].Pop); 
+		}
+		
 
 		
 		for(int i=0;i<ISLAND;i++){//テスト用コード
-			for(int i2=0;i2<data[0][i].Pop2.length;i2++){
-				System.out.println("PoP[0]["+i+"]は"+data[0][i].Pop2[i2]);
+			for(int i2=0;i2<data[0][i].Pop3.length;i2++){
+				System.out.println("PoP[0]["+i+"]は"+data[0][i].Pop3[i2]);
 			}
 		}
 		
