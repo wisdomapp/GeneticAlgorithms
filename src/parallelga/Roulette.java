@@ -16,7 +16,7 @@ public class Roulette{
 			if(i==ele)i++;
 			if(i>=Pop3.length)break;
 			PopS[i]=Pop3[i]/tmp;
-			//System.out.println("Pop2["+i+"]の確率分布は"+PopS[i]);
+			System.out.println("Pop2["+i+"]の確率分布は"+PopS[i]);
 		}
 
 
