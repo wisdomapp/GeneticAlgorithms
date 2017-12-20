@@ -7,7 +7,7 @@ public class Random{
 
 
 		String[] Pop=new String[PGAmain.group];
-		System.out.println("第1世代開始\n初期集団");
+		//System.out.println("第1世代開始\n初期集団");
 		for(int i=0;i<PGAmain.group;i++){
 			Pop[i]="";
 			for(int i2=0;i2<PGAmain.kotaicho;i2++){

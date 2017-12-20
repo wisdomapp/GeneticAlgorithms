@@ -7,7 +7,6 @@ import parallelga.PGAmain;
 public class GAmain{
 	static int gray=0;//グレイコードフラグ
 	static int parallelGA=0;//並列分散フラグ
-	final int island=4;//島の数
 	public static void main(String[] args) throws IOException{
 
 		int x;//世代数
@@ -19,9 +18,11 @@ public class GAmain{
 		BufferedReader br5=new BufferedReader(isr5);
 		String buf5=br5.readLine();
 		parallelGA=Integer.parseInt(buf5);
-		
-		if(parallelGA==1)PGAmain.PGA();
-		
+
+		if(parallelGA==1){
+			PGAmain.PGA();
+		}else{
+
 		System.out.println("生成する世代数を入力。");
 		InputStreamReader isr=new InputStreamReader(System.in);
 		BufferedReader br=new BufferedReader(isr);
@@ -109,5 +110,6 @@ public class GAmain{
 		z=Integer.parseInt(buf3);
 		if(z==0)Output.File(data);
 		System.out.println("終了");
+		}
 	}
 }
