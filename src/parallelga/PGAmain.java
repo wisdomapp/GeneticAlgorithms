@@ -1,6 +1,8 @@
 package parallelga;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class PGAmain{
 	static int ISLAND=4;//島の数
@@ -75,8 +77,8 @@ public class PGAmain{
 				System.out.println("えりーとは"+data[gen][i].Pop3[data[gen][i].Elite]);
 				for(int i2=0;data[gen][i].Pop.length>i2;i2++){
 					//int t=data[i].Pop.length;
-	
-	
+
+
 					if(tmp2[i2]>data[gen][i].Pop3[data[gen][i].Elite]){
 						System.out.println("えりーとよりいいのある");
 						break;
@@ -99,7 +101,7 @@ public class PGAmain{
 								break;
 							}
 						}
-	
+
 					}
 				}
 			}
@@ -108,12 +110,18 @@ public class PGAmain{
 			System.out.println("第"+(gen+2)+"世代開始");
 			for(int i=0;i<ISLAND;i++){ //10進数変換
 				data[gen+1][i].Pop=data[gen][i].NewPop3;
-				data[gen+1][i].Pop2=Fitness.conversion(data[gen][i].NewPop3); 
+				data[gen+1][i].Pop2=Fitness.conversion(data[gen][i].NewPop3);
 			}
 			
 		}
 
-
+		System.out.println("ファイル保存するなら0,しないなら1を入力");
+		InputStreamReader isr3=new InputStreamReader(System.in);
+		BufferedReader br3=new BufferedReader(isr3);
+		String buf3=br3.readLine();
+		generation=Integer.parseInt(buf3);
+		if(generation==0)Output.File(data);
+		System.out.println("終了");
 
 
 		/*for(int i=0;i<ISLAND;i++){//テスト用コード

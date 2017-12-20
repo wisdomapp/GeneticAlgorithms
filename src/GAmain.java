@@ -103,13 +103,13 @@ public class GAmain{
 
 		}
 
-		System.out.println("ファイル保存するなら0,しないなら1を入力");
-		InputStreamReader isr3=new InputStreamReader(System.in);
-		BufferedReader br3=new BufferedReader(isr3);
-		String buf3=br3.readLine();
-		z=Integer.parseInt(buf3);
-		if(z==0)Output.File(data);
-		System.out.println("終了");
+			System.out.println("ファイル保存するなら0,しないなら1を入力");
+			InputStreamReader isr3=new InputStreamReader(System.in);
+			BufferedReader br3=new BufferedReader(isr3);
+			String buf3=br3.readLine();
+			z=Integer.parseInt(buf3);
+			if(z==0)Output.File(data);
+			System.out.println("終了");
 		}
 	}
 }
