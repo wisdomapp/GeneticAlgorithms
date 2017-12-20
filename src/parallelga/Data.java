@@ -20,6 +20,6 @@ public class Data{
 		this.NewPop=new String[i]; //世代交代
 		this.NewPop2=new String[i]; //一点交叉
 		this.NewPop3=new String[i]; //突然変異
-		this.Elite=0; //エリート個体
+		this.Elite=i; //エリート個体
 	}
 }

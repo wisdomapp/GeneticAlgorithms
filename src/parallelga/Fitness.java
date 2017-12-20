@@ -10,13 +10,13 @@ public class Fitness{
 		if(PGAmain.grayF==0){
 			for(int i=0;i<Pop.length;i++){
 				Pop2[i]=Integer.parseInt(Pop[i],2);
-				//System.out.println(Pop2[i]);
+				System.out.println("Pop["+i+"]十進数は"+Pop2[i]);
 			}
 		}else if(PGAmain.grayF==1){
 			//グレイコード変換
 			for(int i=0;i<Pop.length;i++){
 				Pop2[i]=Integer.parseInt(Gray(Pop[i]),2);
-				//System.out.println("Pop["+i+"]十進数は"+Pop2[i]);
+				System.out.println("Pop["+i+"]十進数は"+Pop2[i]);
 				
 			}
 		}else{
