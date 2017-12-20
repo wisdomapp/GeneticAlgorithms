@@ -65,9 +65,45 @@ public class PGAmain{
 		}
 		for(int i=0;i<ISLAND;i++){//突然変異
 			System.out.println("島"+(i));
-			data[0][i].NewPop3=Mutation.Mut(data[0][i].NewPop2); 
+			data[0][i].NewPop3=Mutation.Mut(data[0][i].NewPop2);
 		}
-		
+		for(int i=0;i<ISLAND;i++){//エリート処理
+			System.out.println("島"+(i));
+			int tmp[]=Fitness.conversion(data[0][i].NewPop3);
+			double tmp2[]=Fitness.Compatible(tmp,data[0][i].Pop);
+			System.out.println("えりーとは"+data[0][i].Pop3[data[0][i].Elite]);
+			for(int i2=0;data[0][i].Pop.length>i2;i2++){
+				//int t=data[i].Pop.length;
+
+
+				if(tmp2[i2]>data[0][i].Pop3[data[0][i].Elite]){
+					System.out.println("えりーとよりいいのある");
+					break;
+				}
+				if(i2+1>=data[0][i].Pop.length){
+					System.out.println("エリートといれかえ");
+					double values[]=tmp2;
+					double max=values[0];
+					int min;
+					for(int index=1;index<values.length;index++){
+						max=Math.min(max,values[index]);
+					}
+					for(int index=0;index<values.length;index++){
+						if(values[index]==max){
+							min=index;
+							System.out.println("いちばん低いのはは"+min);
+							System.out.println(data[0][i].NewPop3[min]+"をへんこう");
+							data[0][i].NewPop3[min]=data[0][i].Pop[data[0][i].Elite];
+							System.out.println(data[0][i].NewPop3[min]+"にへんこう");
+							break;
+						}
+					}
+
+				}
+			}
+		}
+
+
 
 
 		/*for(int i=0;i<ISLAND;i++){//テスト用コード
