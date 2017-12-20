@@ -20,43 +20,47 @@ public class PGAmain{
 				data[i][i2]=new Data(generation);
 			}
 		}
-		
+
 		System.out.println("第一世代開始");//初期集団
 		for(int i=0;i<ISLAND;i++){
 			System.out.println("島"+(i));
-			data[0][i].Pop=Random.Ranview(); 
+			data[0][i].Pop=Random.Ranview();
 		}
 		for(int i=0;i<ISLAND;i++){//10進数変換
 			System.out.println("島"+(i));
-			data[0][i].Pop2=Fitness.conversion(data[0][i].Pop); 
+			data[0][i].Pop2=Fitness.conversion(data[0][i].Pop);
 		}
 
-		
+
 		for(int i=0;i<ISLAND;i++){//適合度計算
 			System.out.println("島"+(i));
-			data[0][i].Pop3=Fitness.Compatible(data[0][i].Pop2,data[0][i].Pop); 
+			data[0][i].Pop3=Fitness.Compatible(data[0][i].Pop2,data[0][i].Pop);
 		}
 		for(int i=0;i<ISLAND;i++){//エリート戦略
 			data[0][i].Elite=Roulette.Elite(data[0][i].Pop3);
 			System.out.println("島"+i+"のエリートは"+data[0][i].Elite);
 		}
-		for(int i=0;i<ISLAND;i++){//確率分布計算 
+		for(int i=0;i<ISLAND;i++){//確率分布計算
 			System.out.println("島"+(i));
-			data[0][i].PopS=Roulette.Pselect(data[0][i].Pop3); 
+			data[0][i].PopS=Roulette.Pselect(data[0][i].Pop3);
 		}
-		for(int i=0;i<ISLAND;i++){//集団選択 
+		for(int i=0;i<ISLAND;i++){//ルーレット選択
 			//System.out.println("島"+(i));
-			data[0][i].Select=Roulette.Select(data[0][i].PopS); 
+			data[0][i].Select=Roulette.Select(data[0][i].PopS);
 		}
-		
-		
+		for(int i=0;i<ISLAND;i++){//淘汰
+			System.out.println("島"+(i));
+			data[0][i].NewPop=Roulette.GenerationalChange(data[0][i].Pop, data[0][i].Select);
+		}
+
+
 		/*for(int i=0;i<ISLAND;i++){//テスト用コード
 			//System.out.println("島"+i+"のエリートは"+data[0][i].Elite);
 			for(int i2=0;i2<data[0][i].Pop3.length;i2++){
 				//System.out.println("PoP[0]["+i+"]は"+data[0][i].Pop3[i2]);
-				
-			
+
+
 		}*/
-		
+
 	}
 }
