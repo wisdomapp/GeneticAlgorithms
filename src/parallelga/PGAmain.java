@@ -44,6 +44,10 @@ public class PGAmain{
 			System.out.println("島"+(i));
 			data[0][i].PopS=Roulette.Pselect(data[0][i].Pop3); 
 		}
+		for(int i=0;i<ISLAND;i++){//集団選択 
+			//System.out.println("島"+(i));
+			data[0][i].Select=Roulette.Select(data[0][i].PopS); 
+		}
 		
 		
 		/*for(int i=0;i<ISLAND;i++){//テスト用コード
