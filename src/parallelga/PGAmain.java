@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class PGAmain{
 	static int ISLAND=4;//島の数
-	static int grayF=0;//グレイフラグ
+	static int grayF=0;//グレイコードフラグ
 	static int group=0;//集団数
 	static int kotaicho=0;//個体長
 	static int generation;//世代数
@@ -51,6 +51,17 @@ public class PGAmain{
 		for(int i=0;i<ISLAND;i++){//淘汰
 			System.out.println("島"+(i));
 			data[0][i].NewPop=Roulette.GenerationalChange(data[0][i].Pop, data[0][i].Select);
+		}
+		if(crossingF==0){
+			for(int i=0;i<ISLAND;i++){//一点交叉
+				System.out.println("島"+(i));
+				data[0][i].NewPop2=Crossover.Cross(data[0][i].NewPop);
+			}
+		}else{
+			for(int i=0;i<ISLAND;i++){ //一様交叉
+				System.out.println("島"+(i));
+				data[0][i].NewPop2=MaskCrossover.Cross(data[0][i].NewPop);
+			}
 		}
 
 

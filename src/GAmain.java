@@ -54,8 +54,8 @@ public class GAmain{
 			data[i].Elite=Roulette.Elite(data[i].Pop3);//エリート戦略
 			System.out.println("エリート番号は"+data[i].Elite);
 			data[i].PopS=Roulette.Pselect(data[i].Pop3); //確率分布計算
-			data[i].Select=Roulette.Select(data[i].PopS); //集団選択
-			data[i].NewPop=Roulette.GenerationalChange(data[i].Pop, data[i].Select); //世代交代
+			data[i].Select=Roulette.Select(data[i].PopS); //ルーレット選択
+			data[i].NewPop=Roulette.GenerationalChange(data[i].Pop, data[i].Select); //淘汰
 			if(y==0){
 				data[i].NewPop2=Crossover.Cross(data[i].NewPop); //一点交叉
 			}else{
