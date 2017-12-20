@@ -63,6 +63,11 @@ public class PGAmain{
 				data[0][i].NewPop2=MaskCrossover.Cross(data[0][i].NewPop);
 			}
 		}
+		for(int i=0;i<ISLAND;i++){//突然変異
+			System.out.println("島"+(i));
+			data[0][i].NewPop3=Mutation.Mut(data[0][i].NewPop2); 
+		}
+		
 
 
 		/*for(int i=0;i<ISLAND;i++){//テスト用コード
