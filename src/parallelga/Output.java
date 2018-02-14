@@ -25,16 +25,24 @@ public class Output{
 					if(PGAmain.grayF==0){
 						for(int i=0;i<PGAmain.ISLAND;i++){ //いつもの
 							for(int i2=0;i2<data[0][0].Pop.length;i2++){
-								pw.println(data[gene][i].Pop[i2]+" "+data[gene][i].Pop3[i2]);
+								int[] tmp=new int[data[0][0].Pop.length];
+								double[] tmp2=new double[data[0][0].Pop.length];
+								tmp=Fitness.conversion(data[gene][i].NewPop3);
+								tmp2=Fitness.Compatible(tmp, data[gene][i].NewPop3);
+								pw.println(data[gene][i].NewPop3[i2]+" "+tmp2[i2]);
 							}
-							pw.println("*");
+							//pw.println("*");
 						}
 					}else if(PGAmain.grayF==1){
 						for(int i=0;i<PGAmain.ISLAND;i++){ //いつもの
 							for(int i2=0;i2<data[0][0].Pop.length;i2++){
-							pw.println(Fitness.Gray(data[gene][i].Pop[i2])+" "+data[gene][i].Pop3[i2]);
+								int[] tmp=new int[data[0][0].Pop.length];
+								double[] tmp2=new double[data[0][0].Pop.length];
+								tmp=Fitness.conversion(data[gene][i].NewPop3);
+								tmp2=Fitness.Compatible(tmp, data[gene][i].NewPop3);
+								pw.println(Fitness.Gray(data[gene][i].NewPop3[i2])+" "+tmp2[i2]);
 							}
-							pw.println("*");
+							//pw.println("*");
 						}
 						
 					}

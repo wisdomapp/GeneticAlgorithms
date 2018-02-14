@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 
 public class PGAmain{
 	static int ISLAND=4;//島の数
+	static int IMMIGRATION=3;//移住イベント世代数
 	static int grayF=0;//グレイコードフラグ
 	static int group=0;//集団数
 	static int kotaicho=0;//個体長
@@ -86,7 +87,7 @@ public class PGAmain{
 					if(i2+1>=data[gen][i].Pop.length){
 						System.out.println("エリートといれかえ");
 						double values[]=tmp2;
-						double max=values[gen];
+						double max=values[0];
 						int min;
 						for(int index=1;index<values.length;index++){
 							max=Math.min(max,values[index]);
@@ -102,6 +103,32 @@ public class PGAmain{
 							}
 						}
 
+					}
+				}
+			}
+			//移住イベント
+			if((gen+1)%IMMIGRATION==0){
+				System.out.println("移住イベント開始");
+				String[] tmp=new String[ISLAND];
+				for(int i=0;i<ISLAND;i++){
+					int sel=(int)(Math.random()*group);
+					System.out.println("島["+i+"]の移住個体はNewPop3["+sel+"]="+data[gen][i].NewPop3[sel]);
+					if(i==(ISLAND-1)){
+						tmp[0]=data[gen][i].NewPop3[sel];
+						data[gen][i].NewPop3[sel]=null;
+					}else{
+					tmp[i+1]=data[gen][i].NewPop3[sel];
+					data[gen][i].NewPop3[sel]=null;
+					}
+				}
+				for(int i=0;i<ISLAND;i++){
+					for(int z=0;z<group;z++){
+						if(data[gen][i].NewPop3[z]==null){
+							System.out.println("島["+i+"]の移住個体が"+tmp[i]+"に変化");
+							data[gen][i].NewPop3[z]=tmp[i];
+							
+							break;
+						}
 					}
 				}
 			}

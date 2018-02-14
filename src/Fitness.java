@@ -49,8 +49,8 @@ public class Fitness{
 
 
 			double tmp=Pop2[i]/multi;
-			//Pop3[i]=-4*tmp*(tmp-1);//適合度関数
-			Pop3[i]=Math.abs(Math.sin(5*Math.PI*tmp));
+			Pop3[i]=-4*tmp*(tmp-1);//適合度関数
+			//Pop3[i]=Math.abs(Math.sin(5*Math.PI*tmp));
 			//Pop3[i]=tmp*Math.abs(Math.sin(4*Math.PI*tmp));//関数(GraphPanelも修正必須)
 			System.out.println("Pop2["+i+"]の適合度は"+Pop3[i]);
 		}
